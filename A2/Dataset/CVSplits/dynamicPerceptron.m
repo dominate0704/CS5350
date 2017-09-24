@@ -1,4 +1,4 @@
-function [w,b, errors] = simplePerceptron( data, learningRate)
+function [w, b, errors] = dynamicPerceptron( data, learningRate)
      w = -0.01 + (0.02)*rand(1,70);
      b = -0.01 + (0.02)*rand;
      errors = 0;
@@ -6,8 +6,9 @@ function [w,b, errors] = simplePerceptron( data, learningRate)
          y = data(i,71);
          x = data(i,1:70);
          if y*(w*x'+b) <= 0
-             w = w+ learningRate*y*x;
-             b = b + learningRate*y;
+             dynamicRate = learningRate/(1+errors);
+             w = w+ dynamicRate*y*x;
+             b = b + dynamicRate*y;
              errors = errors +1;
          end
      end
