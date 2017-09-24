@@ -3,6 +3,7 @@ function [w,b, errors] = averagePerceptron( data, learningRate)
      b = -0.01 + (0.02)*rand;
      errors = 0;
      a = 0;
+     b_A = 0;
      for i = 1: length(data)
          y = data(i,71);
          x = data(i,1:70);
@@ -11,8 +12,10 @@ function [w,b, errors] = averagePerceptron( data, learningRate)
              b = b + learningRate*y;
              errors = errors +1;
              a = a+w;
+             b_A= b_A+b;
          else
              a = a+w;
+             b_A= b_A+b;
          end
      end
 end

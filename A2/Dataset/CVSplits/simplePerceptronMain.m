@@ -25,20 +25,27 @@ for i = 1:5
 %       eAnswer{j,i} = errors;
 %       correctRate{j,i} = checkPerceptron(dataTest, w,b)/1658;
 %   end
+%   for j = 1:3
+%       [w ,b ,errors] = dynamicPerceptron(dataTrain, learningRate(j));
+%       wAnswer{j,i} = w;
+%       bAnswer{j,i} = b;
+%       eAnswer{j,i} = errors;
+%       correctRate{j,i} = checkPerceptron(dataTest, w,b)/1658;
+%   end
+%   for j = 1:3
+%       for n = 1:3
+%       [w ,b ,errors] = marginPerceptron(dataTrain, learningRate(j), margin(n));
+%       wMarginAnswer{(j-1)*3+n,i} = w;
+%       bMarginAnswer{(j-1)*3+n,i} = b;
+%       eMarginAnswer{(j-1)*3+n,i} = errors;
+%       correctRateMargin{(j-1)*3+n,i} = checkPerceptron(dataTest, w,b)/1658;
+%       end
+%   end
   for j = 1:3
-      [w ,b ,errors] = dynamicPerceptron(dataTrain, learningRate(j));
+      [w ,b ,errors] = averagePerceptron(dataTrain, learningRate(j));
       wAnswer{j,i} = w;
       bAnswer{j,i} = b;
       eAnswer{j,i} = errors;
       correctRate{j,i} = checkPerceptron(dataTest, w,b)/1658;
-  end
-  for j = 1:3
-      for n = 1:3
-      [w ,b ,errors] = marginPerceptron(dataTrain, learningRate(j), margin(n));
-      wMarginAnswer{(j-1)*3+n,i} = w;
-      bMarginAnswer{(j-1)*3+n,i} = b;
-      eMarginAnswer{(j-1)*3+n,i} = errors;
-      correctRateMargin{(j-1)*3+n,i} = checkPerceptron(dataTest, w,b)/1658;
-      end
   end
 end
