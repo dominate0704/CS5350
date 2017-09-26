@@ -1,4 +1,6 @@
 function [wAnswer,bAnswer, eAnswer] = averagePerceptronTrain( data, learningRate,epochs)
+     mySeed = 15;
+     rng(mySeed); 
      wAnswer = cell(epochs,1);
      bAnswer = cell(epochs,1);
      eAnswer = cell(epochs,1);

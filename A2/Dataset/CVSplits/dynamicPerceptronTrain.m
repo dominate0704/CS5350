@@ -1,5 +1,7 @@
 function [wAnswer,bAnswer, eAnswer] = dynamicPerceptronTrain( data, learningRate,epochs)
-     wAnswer = cell(epochs,1);
+    mySeed = 5;
+     rng(mySeed);      
+    wAnswer = cell(epochs,1);
      bAnswer = cell(epochs,1);
      eAnswer = cell(epochs,1);
     
@@ -23,6 +25,5 @@ function [wAnswer,bAnswer, eAnswer] = dynamicPerceptronTrain( data, learningRate
         wAnswer{epoch,1} = w;
         bAnswer{epoch,1} = b;
         eAnswer{epoch,1} = errors;
-     end
-     
+     end 
 end
