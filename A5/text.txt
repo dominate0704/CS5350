@@ -1,0 +1,22 @@
+For SGD, the best hyper_parameter: gamma = 1 ; C = 10
+Average cross-validation accuracy = 0.8616
+For SGD, the Training Accuracy = 0.93577
+For SGD, the Testing Accuracy = 0.84149
+For LR, the best hyper_parameter: gamma = 1 ; sigma2 = 10
+Average cross-validation accuracy = 0.80376
+For LR, the Training Accuracy = 0.83463
+For LR, the Testing Accuracy = 0.79043
+For Naive Bayes, the best hyper_parameter: lambda = 1
+Average cross-validation accuracy = 0.52913
+For Naive Bayes, the Training Accuracy = 0.50106
+For Naive Bayes, the Testing Accuracy = 0.5
+For Bagged Forests , the Training Accuracy = 0.75905
+For Bagged Forests, the Testing Accuracy = 0.74894
+For SGD over tree, the best hyper_parameter: gamma = 1 ; C = 10
+Average cross-validation accuracy = 0.8332
+For SGD over tree, the Training Accuracy = 0.9127
+For SGD over tree, the Testing Accuracy = 0.82447
+For LR over tree, the best hyper_parameter: gamma = 1 ; sigma2 = 1
+Average cross-validation accuracy = 0.8073
+For LR over tree, the Training Accuracy = 0.82044
+For LR over tree, the Testing Accuracy = 0.78936
