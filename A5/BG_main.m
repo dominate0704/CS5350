@@ -1,7 +1,15 @@
 clear;
 load('data.mat');
-Answer_tree = baggingtree( traindata, 100, 3 ,1000);
+% Answer_tree = baggingtree( traindata, 100, 3 ,1000);
+load('BG_dep3.mat');
+[list, errors] = visitNode(Answer_tree, traindata);
+len = length(traindata);
+AnswerAccuracy_BG(1) = (len-errors)/len;
+x3 = ['For Bagged Forests , the Training Accuracy = ', num2str((len-errors)/len)];
 [list, errors] = visitNode(Answer_tree, testdata);
 len = length(testdata);
-AnswerAccuracy = (len-errors)/len;
-save('BG_dep3.mat','Answer_tree','AnswerAccuracy');
+AnswerAccuracy_BG(2) = (len-errors)/len;
+x4 = ['For Bagged Forests, the Testing Accuracy = ', num2str((len-errors)/len)];
+disp(x3);
+disp(x4);
+save('BG_dep3.mat','Answer_tree','AnswerAccuracy_BG');
